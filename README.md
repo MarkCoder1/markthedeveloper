@@ -67,6 +67,31 @@ Structured data (`Person` schema) and OpenGraph image improve link previews and 
 
 Push to a GitHub repo and import the project in Vercel for automatic CI/CD.
 
+## Build & Deploy (Quick)
+
+- Local production build:
+	- Install deps: `npm ci` (or `npm install`)
+	- Build: `npm run build`
+	- Start: `npm start` (serves at `http://localhost:3000` by default)
+
+- Deploy to Vercel (recommended):
+	- Push this project to GitHub.
+	- In Vercel: New Project → Import your repo → Framework: Next.js → Deploy.
+	- Optional CLI:
+		```powershell
+		npm i -g vercel
+		vercel
+		vercel --prod
+		```
+
+- Self-host (Node server):
+	- Run `npm run build` then `npm start` on your server.
+	- Configure your reverse proxy (Nginx/Caddy) to forward to the Node process; set `PORT` as needed.
+
+- Custom domain:
+	- Vercel: Project → Settings → Domains → Add domain and follow DNS prompts.
+	- Self-host: Point DNS A/AAAA to your server; terminate TLS at the proxy (e.g., Caddy auto-HTTPS).
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
