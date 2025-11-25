@@ -39,7 +39,7 @@ export default function About() {
           </div>
           <div>
             <h3 className="text-sm font-semibold tracking-wide uppercase mb-3">Values</h3>
-            <ul className="space-y-2 text-sm text-foreground/80">
+            <ul className="space-y-2 text-sm text-foreground-80">
               {values.map(v => (
                 <li key={v} className="flex gap-2">
                   <span className="text-primary">▸</span>

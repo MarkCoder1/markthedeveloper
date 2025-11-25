@@ -17,7 +17,7 @@ export default function Experience() {
                   {item.start} – {item.end}
                 </time>
               </div>
-              <ul className="space-y-1 text-sm text-foreground/80 mb-3">
+              <ul className="space-y-1 text-sm text-foreground-80 mb-3">
                 {item.highlights.map(h => (
                   <li key={h} className="flex gap-2">
                     <span className="text-primary">•</span>

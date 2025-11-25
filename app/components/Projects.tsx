@@ -17,7 +17,7 @@ export default function Projects() {
               </h3>
               <p className="text-sm text-muted-foreground mb-4 flex-1 leading-relaxed">{p.description}</p>
               {p.highlights && (
-                <ul className="mb-4 space-y-1 text-xs text-foreground/80">
+                <ul className="mb-4 space-y-1 text-xs text-foreground-80">
                   {p.highlights.map(h => (
                     <li key={h} className="flex gap-1">
                       <span className="text-primary">•</span>
@@ -30,7 +30,7 @@ export default function Projects() {
                 {p.tech.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full bg-accent/50 px-2 py-1 text-[11px] font-medium text-foreground/80 backdrop-blur-sm"
+                    className="rounded-full bg-accent/50 px-2 py-1 text-[11px] font-medium text-foreground-80 backdrop-blur-sm"
                   >
                     {t}
                   </span>

@@ -4,7 +4,7 @@ export default function CtaBanner() {
   return (
     <section className="py-16">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-linear-to-br from-primary/90 to-primary shadow-soft p-10 text-primary-foreground">
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-primary-gradient shadow-soft p-10 text-primary-foreground">
           <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.3),transparent_60%)]" />
           <div className="flex flex-col gap-6 max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight">Let’s build something impactful.</h2>
