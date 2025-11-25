@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
+/* Design tokens */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafafa;
+  --foreground: #1b1b1b;
+  --foreground-rgb: 27,27,27;
+  --border: hsl(0 0% 86%);
+  --accent: hsl(220 92% 95%);
+  --primary: hsl(258 90% 60%);
+  --primary-foreground: #ffffff;
+  --card: #ffffff;
+  --radius: 8px;
+  --secondary: hsl(200 85% 50%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #e5e5e5;
+    --border: hsl(0 0% 25%);
+    --accent: hsl(220 50% 18%);
+    --card: #111111;
   }
+}
+
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #e5e5e5;
+  --foreground-rgb: 229,229,229;
+  --border: hsl(0 0% 25%);
+  --accent: hsl(220 50% 18%);
+  --card: #111111;
+  --secondary: hsl(200 70% 45%);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Utilities */
+.text-muted-foreground { color: rgba(var(--foreground-rgb, 27,27,27), 0.65); }
+.bg-background { background-color: var(--background); }
+.text-foreground { color: var(--foreground); }
+.border-border { border-color: var(--border); }
+.bg-card { background-color: var(--card); }
+.bg-accent { background-color: var(--accent); }
+.text-primary { color: var(--primary); }
+.bg-primary { background-color: var(--primary); }
+.text-primary-foreground { color: var(--primary-foreground); }
+.text-secondary { color: var(--secondary); }
+.bg-secondary { background-color: var(--secondary); }
+
+@layer utilities {
+  .shadow-soft { box-shadow: 0 2px 8px -2px rgba(0,0,0,0.06), 0 4px 16px -4px rgba(0,0,0,0.05); }
+  .gradient-border { position: relative; }
+  .gradient-border:before { content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit; background: linear-gradient(135deg,var(--primary),var(--secondary)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+}
+
+/* Transitions */
+* { transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+*:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+::selection { background: var(--primary); color: var(--primary-foreground); }
